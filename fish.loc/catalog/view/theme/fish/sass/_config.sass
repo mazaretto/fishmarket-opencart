@@ -1,0 +1,188 @@
+// USER VARIABLES SECTION
+
+$accent: #113380 // Accent Color
+$gray: #EEEEEE
+$blue: #EEF6FF
+$orange: #E64B37
+
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$gilroy: 'Gilroy', sans-serif
+$lugatype: 'Lugatype', sans-serif
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+@function max($numbers...)
+  @return m#{a}x(#{$numbers})
+@function min($numbers...)
+  @return m#{i}n(#{$numbers})
+
+@import 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min'
+@import 'node_modules/swiper/swiper-bundle.min'
+
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-style: $fstyle
+    font-weight: $fweight
+    src: url($furl) format('woff2')
+
+@include font('Lugatype', normal, 400, '../fonts/Lugatype/Lugatype.woff')
+@include font('Gilroy', normal, 400, '../fonts/Gilroy/Gilroy-Regular.woff')
+@include font('Gilroy-italic', italic, 400, '../fonts/Gilroy/Gilroy-RegularItalic.woff')
+@include font('Gilroy-semibold', normal, 600, '../fonts/Gilroy/Gilroy-SemiBold.woff')
+
+
+::placeholder
+  color: #666
+
+::selection
+  background-color: $accent
+  color: #fff
+*
+  box-sizing: border-box
+
+input, textarea
+  outline: none
+  &:focus:required:invalid
+    border-color: red
+  &:required:valid
+    border-color: green
+body
+  font-family: $gilroy
+  font-size: 16px
+  min-width: 400px
+  position: relative
+  line-height: 1.65
+  overflow-x: hidden
+  color: $accent
+  margin: 0
+  padding: 0
+img
+  max-width: 100%
+  height: auto
+  display: inline-block
+
+a:focus
+  outline: none
+a:hover
+  color: $accent
+
+.page-wrapper
+  position: relative
+  overflow-x: hidden
+  width: 100%
+  max-width: 100%
+
+.flex-center
+  display: flex
+  align-items: center
+  align-content: center
+  justify-content: center
+
+.home .top-line
+  display: none
+  &.active
+    display: block
+.page-wrapper
+  margin-top: 55px
+.home .page-wrapper
+  margin-top: 0
+
+.button
+  height: 60px
+  border-radius: 30px
+  padding: 0 60px
+  color: #ffffff
+  background: linear-gradient(180deg, rgba(83,134,217,1) 0%, rgba(136,183,232,1) 100%)
+  display: inline-flex
+  align-items: center
+  align-content: center
+  justify-content: center
+  box-shadow: 0 0 20px rgba(#5A8DDC, .6)
+  transition: background .25s ease, box-shadow .25s ease
+  border: none
+  outline: none
+  &:hover
+    text-decoration: none
+    color: #ffffff
+    box-shadow: none
+    background: linear-gradient(180deg, rgba(83,134,217,1) 0%, rgba(136,183,262,1) 100%)
+  &.btn-middle
+    height: 50px
+
+.pages-header
+  background-image: url('../image/dest/deep-page-header.png')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  padding: 100px 0 250px
+  &__title
+    font-family: $lugatype
+    font-size: 52px
+    margin: 0 0 10px
+  &__breadcrumbs
+    display: flex
+    align-items: center
+    align-content: center
+    flex-wrap: wrap
+    list-style-type: none
+    margin: 0
+    padding: 0
+    a
+      color: $accent
+    li
+      margin-right: 40px
+      position: relative
+      a
+        text-decoration: underline
+      &:last-child
+        a
+          text-decoration: none
+      &:before
+        position: absolute
+        content: '/'
+        right: -25px
+        top: 50%
+        transform: translateY(-50%)
+      &:last-child
+        margin-right: 0
+        &:before
+          display: none
+          
+.pp-product-add
+  background-color: #ffffff
+  width: 50%
+  margin: 0 auto
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 15
+  display: none
+  padding: 30px
+  a
+    color: $accent
+    text-decoration: underline
+  &__close
+    position: absolute
+    top: 50%
+    right: 30px
+    transform: translateY(-50%)
+    cursor: pointer
+
+.overlay
+  position: fixed
+  width: 100%
+  height: 100%
+  bottom: 0
+  top: 0
+  left: 0
+  right: 0
+  background-color: $blue
+  z-index: 5
+  opacity: .8
+  display: none
+  cursor: pointer

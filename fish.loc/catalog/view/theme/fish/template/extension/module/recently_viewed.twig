@@ -1,0 +1,75 @@
+
+<div class="revently-view">
+	<div class="container">
+		<div class="revently-view__title_inner">
+			<h3 class="revently-view__title">{{ heading_title }}</h3>
+		</div>
+		<div class="revently-view__slider_inner">
+			<div class="revently-view__slider swiper-container">
+				<div class="swiper-wrapper">
+					{% for product in products %}
+						<div class="product-layout revently-view__product swiper-slide">
+							<div class="revently-view__product_top">
+								<button class="hits__product_like" type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');">
+									<svg width="17" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.313 1.031C13.5-.5 10.718-.28 9 1.5c-1.75-1.781-4.531-2-6.344-.469C.312 3 .656 6.22 2.344 7.938l5.469 5.593c.312.313.718.5 1.187.5a1.63 1.63 0 001.156-.5l5.5-5.594c1.656-1.718 2-4.937-.344-6.906zm-.75 5.844l-5.47 5.594c-.062.062-.124.062-.218 0L3.406 6.875c-1.156-1.156-1.375-3.344.219-4.688 1.219-1.03 3.094-.874 4.281.313L9 3.625 10.094 2.5c1.156-1.188 3.031-1.344 4.25-.344 1.594 1.375 1.375 3.563.219 4.719z" fill="#E64B37"/></svg>
+								</button>
+							</div>
+							<div class="revently-view__product_img-inner">
+								<a href="{{ product.href }}" class="revently-view__product_img">
+									<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" />
+								</a>
+							</div>
+							<div class="revently-view__product_content">
+								<h4 class="revently-view__product_title"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+								<div class="revently-view__product_price-wrap">
+									<span class="revently-view__product_option">50шт / 5кг</span>
+									<span class="revently-view__product_price">
+										{% if product.price %}
+											<p class="price">
+											{% if not product.special %}
+												{{ product.price }}
+											{% else %}
+												<span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+											{% endif %}
+												{% if product.tax %}
+													<span class="price-tax">{{ text_tax }} {{ product.tax }}</span>
+												{% endif %}
+										  </p>
+										{% endif %}
+										</span>
+								</div>
+							</div>
+							<div class="revently-view__product_button">
+								<button class="button btn-middle" type="button" onclick="cart.add('{{ product.product_id }}');">{{ button_cart }}</button>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="revently-view__slider_next revently-view__slider_btn">
+				<svg width="14" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.25.594l-.625.625a.389.389 0 00.031.531l2.5 2.438H.375A.38.38 0 000 4.563v.875c0 .187.187.375.375.375h10.781l-2.5 2.406a.389.389 0 00-.031.531l.625.625a.423.423 0 00.531 0l4.125-4.125a.423.423 0 000-.531L9.781.594a.423.423 0 00-.531 0z" fill="#222" fill-opacity=".6"/></svg>
+			</div>
+			<div class="revently-view__slider_prev revently-view__slider_btn">
+				<svg width="14" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.406l.625-.625a.389.389 0 00-.031-.531l-2.5-2.438h10.781A.38.38 0 0014 5.438v-.875a.403.403 0 00-.375-.375H2.844l2.5-2.406a.389.389 0 00.031-.531L4.75.625a.423.423 0 00-.531 0L.094 4.75a.423.423 0 000 .531l4.125 4.125a.423.423 0 00.531 0z" fill="#222" fill-opacity=".6"/></svg>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript"><!--
+	$('.revently-view__slider').swiper({
+		slidesPerView: 4,
+		spaceBetween: 30,
+		nextButton: '.revently-view__slider_next',
+		prevButton: '.revently-view__slider_prev',
+		breakpoints: {
+			800: {
+				slidesPerView: 1,
+			},
+			1300: {
+				slidesPerView: 2,
+			},
+		},
+	});
+	--></script>

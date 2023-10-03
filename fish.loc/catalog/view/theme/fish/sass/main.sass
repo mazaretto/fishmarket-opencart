@@ -1,0 +1,1511 @@
+@import config
+
+
+.mmenu
+  position: fixed
+  right: 0
+  top: 0
+  bottom: 0
+  width: 250px
+  height: 100%
+  background-color: #ffffff
+  z-index: 6
+  padding: 20px 0
+  box-shadow: 0 0 20px rgba(0,0,0, .2)
+  right: -250px
+  &__top
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: space-between
+    padding: 0 20px
+    margin-bottom: 40px
+  &__title
+    color: $accent
+    font-weight: 600
+  &__close
+    background-color: $blue
+    width: 25px
+    height: 25px
+    border-radius: 50%
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+  &__list
+    margin: 0
+    padding: 0
+    list-style-type: none
+  &__link
+    padding: 10px 20px
+    display: block
+    border-bottom: 2px solid $blue
+    color: $accent
+.top-line
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 55px
+  background-color: #ffffff
+  box-shadow: 0 0 30px rgba(0,0,0, .2)
+  z-index: 3
+  &__container
+    display: flex
+    align-items: stretch
+    align-content: stretch
+    height: 100%
+  &__logo
+    width: 10%
+    border-right: 1px solid rgba(0,0,0, .1)
+    position: relative
+    &_link
+      position: absolute
+  &__menu
+    width: 50%
+    border-right: 1px solid rgba(0,0,0, .1)
+    &_list
+      display: flex
+      align-items: center
+      align-content: center
+      margin: 0
+      padding: 0
+      list-style-type: none
+    &_item
+      margin: 0 15px
+    &_link
+      color: $accent
+      font-size: 14px
+  &__phone
+    width: 17%
+    border-right: 1px solid rgba(0,0,0, .1)
+    color: $accent
+    &:hover
+      background-color: $gray
+      text-decoration: none
+  &__action
+    width: 15%
+    border-right: 1px solid rgba(0,0,0, .1)
+    &_item
+      margin-right: 40px
+      position: relative
+      &:before
+        position: absolute
+        content: ''
+        right: -20px
+        top: 0
+        width: 1px
+        height: 100%
+        background-color: rgba(0,0,0, .1)
+      &:last-child
+        margin-right: 0
+        &:before
+          display: none
+  &__cart
+    width: 8%
+    &:hover
+      background-color: $gray
+      text-decoration: none
+    &_inner
+      position: relative
+    &_count
+      position: absolute
+      top: 10px
+      right: -8px
+      background-color: #ce3e37
+      color: #ffffff
+      font-size: 10px
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: center
+      border-radius: 50%
+      width: 14px
+      height: 14px
+  &__mmenu
+    display: none
+
+
+.header
+  background-image: url('../image/dest/header.png')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  min-height: 900px
+  height: 100vh
+  &__content
+    margin-top: 220px
+    width: 35%
+  &__title
+    font-size: 90px
+    font-family: $lugatype
+    line-height: .9
+    margin-bottom: 20px
+  &__desc
+    font-weight: 600
+    font-size: 22px
+  &__button
+    margin-top: 25px
+  .top-line
+    background-color: transparent
+    display: block
+    position: static
+    box-shadow: none
+    padding-top: 15px
+    &__logo
+      border-right: none
+      &_link
+        top: -10px
+    &__menu
+      border-right: none
+    &__phone
+      border-right: none
+      &:hover
+        background-color: transparent
+        text-decoration: underline
+    &__action
+      border-right: none
+      &_item
+        &:before
+          display: none
+    &__cart
+      &:hover
+        background-color: transparent
+      &_count
+        top: 10px
+        right: -8px
+
+.container
+  width: 1200px
+  margin: 0 auto
+
+
+
+.actions
+  padding: 40px 0 100px
+  &__container
+    display: flex
+  &__row
+    width: 33.333333%
+    margin-right: 30px
+    &:last-child
+      margin-right: 0
+  &__item
+    display: block
+    border-radius: 20px
+    overflow: hidden
+    img
+      height: 100%
+      min-height: 100%
+  &__left
+    &_item
+      margin-bottom: 30px
+      height: 250px
+      &:last-child
+        margin-bottom: 0
+  &__right
+    &_item
+      margin-bottom: 30px
+      height: 250px
+      &:last-child
+        margin-bottom: 0
+  &__center
+    &_item
+      height: 530px
+      text-align: center
+
+.hits
+  background-color: $blue
+  padding: 250px 0 300px
+  position: relative
+  &:before
+    position: absolute
+    content: ''
+    top: -100px
+    left: 0
+    right: 0
+    width: 100%
+    height: 300px
+    background-image: url('../image/dest/offset-white.png')
+    background-size: cover
+    background-repeat: no-repeat
+  &:after
+    position: absolute
+    content: ''
+    bottom: -100px
+    left: 0
+    right: 0
+    width: 100%
+    height: 300px
+    background-image: url('../image/dest/offset-white.png')
+    transform: rotate(180deg)
+    background-size: cover
+    background-repeat: no-repeat
+  &__grid
+    &:before
+      position: absolute
+      content: ''
+      top: 0
+      right: 0
+      width: 100px
+      height: 450px
+      background-image: url('../image/dest/grid.png')
+      background-size: cover
+      background-repeat: no-repeat
+    &:after
+      position: absolute
+      content: ''
+      bottom: 50px
+      left: 0
+      width: 320px
+      height: 350px
+      background-image: url('../image/dest/grid2.png')
+      background-size: cover
+      background-repeat: no-repeat
+  &__title
+    text-align: center
+    font-family: $lugatype
+    font-size: 52px
+    position: relative
+    display: inline-block
+    &:before
+      position: absolute
+      content: ''
+      left: -100px
+      top: 50%
+      transform: translateY(-50%)
+      background-image: url('../image/dest/icons/fish.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      width: 56px
+      height: 22px
+    &:after
+      position: absolute
+      content: ''
+      right: -100px
+      top: 50%
+      transform: translateY(-50%)
+      background-image: url('../image/dest/icons/fish2.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      width: 56px
+      height: 22px
+    &_inner
+      text-align: center
+      margin-bottom: 60px
+  &__slider
+    &_inner
+      position: relative
+    &_btn
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      width: 50px
+      height: 50px
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: center
+      box-shadow: 0 0 20px rgba(0,0,0, .1)
+      z-index: 2
+      border-radius: 50%
+      background-color: #ffffff
+      cursor: pointer
+      &.swiper-button-disabled
+        opacity: .5
+    &_next
+      right: -25px
+    &_prev
+      left: -25px
+  &__product
+    background-color: #ffffff
+    padding: 20px 30px 40px
+    border-radius: 10px
+    &_top
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: flex-end
+    &_new
+      color: $orange
+    &_like
+      border: none
+      outline: none
+      background-color: transparent
+      padding: 0
+      margin: 0
+    &_img
+      display: inline-block
+      width: 80%
+      text-align: center
+      img
+        margin: 0
+        padding: 0
+        display: inline-block
+      &-inner
+        text-align: center
+        margin-bottom: 30px
+    &_title
+      font-size: 24px
+      font-family: $lugatype
+      margin-bottom: 20px
+      a
+        color: $accent
+        text-decoration: none
+    &_price-wrap
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: space-between
+      margin-bottom: 40px
+    &_button
+      text-align: center
+
+.about
+  padding-top: 100px
+  &__container
+    display: flex
+    align-items: center
+    align-content: center
+  &__img
+    width: 50%
+  &__content
+    width: 50%
+  &__title
+    font-family: $lugatype
+    font-size: 52px
+    margin-bottom: 40px
+  &__desc
+    padding-right: 10%
+  &__bulits
+    display: flex
+    align-items: center
+    align-content: center
+    margin-top: 60px
+  &__bulit
+    margin-right: 40px
+    &:last-child
+      margin-right: 0
+    &_num
+      font-size: 50px
+      line-height: 50px
+      font-weight: 800
+      margin: 0
+      position: relative
+      &:before
+        position: absolute
+        content: ''
+        right: -50px
+        bottom: 15px
+        background-image: url('../image/dest/bubbles.png')
+        background-repeat: no-repeat
+        background-size: contain
+        width: 40px
+        height: 65px
+    &_desc
+      margin: 0
+      font-size: 14px
+
+.production
+  padding-bottom: 80px
+  &__container
+    display: flex
+    align-items: center
+    align-content: center
+  &__img
+    width: 50%
+  &__content
+    width: 50%
+    padding-right: 10%
+  &__title
+    font-family: $lugatype
+    font-size: 52px
+    margin-bottom: 40px
+
+.partners
+  padding: 50px 0 120px
+  &__title
+    text-align: center
+    font-family: $lugatype
+    font-size: 52px
+    position: relative
+    display: inline-block
+    &:before
+      position: absolute
+      content: ''
+      left: -100px
+      top: 50%
+      transform: translateY(-50%)
+      background-image: url('../image/dest/icons/fish.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      width: 56px
+      height: 22px
+    &:after
+      position: absolute
+      content: ''
+      right: -100px
+      top: 50%
+      transform: translateY(-50%)
+      background-image: url('../image/dest/icons/fish2.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      width: 56px
+      height: 22px
+    &_inner
+      text-align: center
+      margin-bottom: 60px
+  &__content
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+  &__item
+    text-align: center
+    &_name
+      margin-top: 20px
+      font-size: 18px
+      display: block
+      
+.home-callback
+  background-image: url('../image/dest/callbackbg.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  color: #ffffff
+  padding: 250px 0 300px
+  position: relative
+  &:before
+    position: absolute
+    content: ''
+    top: -100px
+    left: 0
+    right: 0
+    width: 100%
+    height: 300px
+    background-image: url('../image/dest/offset-white.png')
+    background-size: cover
+    background-repeat: no-repeat
+  &:after
+    position: absolute
+    content: ''
+    bottom: -100px
+    left: 0
+    right: 0
+    width: 100%
+    height: 300px
+    background-image: url('../image/dest/offset-white.png')
+    transform: rotate(180deg)
+    background-size: cover
+    background-repeat: no-repeat
+  &__title
+    font-family: $lugatype
+    font-size: 52px
+    position: relative
+    text-align: center
+    margin: 0 0 60px
+  &__areas
+    display: flex
+    width: 100%
+  &__form
+    width: 80%
+    margin: 0 auto
+    &_col
+      width: 50%
+      margin-right: 30px
+      &:last-child
+        margin-right: 0
+  .form-group
+    height: 75px
+    margin-bottom: 0
+  &__input
+    border-radius: 50px
+    background-color: #ffffff
+    color: $accent
+    height: 55px
+    padding: 0 30px
+    border: none
+    outline: none
+    width: 100%
+  &__textarea
+    height: 120px
+    border-radius: 15px
+    background-color: #ffffff
+    color: $accent
+    padding: 10px 30px
+    border: none
+    outline: none
+    width: 100%
+  &__action
+    text-align: center
+  &__checkbox
+    display: inline-flex
+    align-items: center
+    align-content: center
+    width: 30%
+    margin: 30px 0 50px
+    cursor: pointer
+    input
+      display: none
+    input:checked ~ .home-callback__checkbox_custom
+      background-image: url('../image/dest/icons/check.svg')
+      background-position: center
+      background-repeat: no-repeat
+    &_custom
+      width: 35px
+      min-width: 35px
+      height: 35px
+      background-color: #ffffff
+      border-radius: 50%
+      margin-right: 15px
+    &_text
+      text-align: left
+      font-weight: 500
+      line-height: 1.3
+
+.destributers
+  padding: 100px 0
+  margin-bottom: 200px
+  &__title
+    font-family: $lugatype
+    font-size: 52px
+    position: relative
+    text-align: center
+    margin: 0 0 30px
+  &__desc
+    text-align: center
+    width: 60%
+    margin: 0 auto
+  &__map
+    height: 650px
+    width: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    margin-top: 40px
+
+.newsletter
+  position: absolute
+  top: -150px
+  left: 50%
+  transform: translateX(-50%)
+  background-color: #ffffff
+  border: 1px solid #5386d9
+  padding: 30px 150px 60px
+  width: 80%
+  border-radius: 40px
+  &__title
+    font-family: $lugatype
+    font-size: 36px
+    position: relative
+    text-align: center
+    margin: 0 0 10px
+  &__desc
+    width: 80%
+    text-align: center
+    font-size: 18px
+    margin: 0 auto
+  &__form
+    margin-top: 40px
+    &_input
+      position: absolute
+      width: 100%
+      height: 100%
+      box-shadow: 0 0 20px rgba(0,0,0, .1)
+      border: none
+      outline: none
+      border-radius: 40px
+      padding: 0 40px
+    .button
+      position: absolute
+      right: 5px
+      height: 50px
+      top: 50%
+      transform: translateY(-50%)
+      padding: 0 35px
+      box-shadow: none
+  .form-group
+    position: relative
+    height: 60px
+    width: 100%
+
+.footer
+  position: relative
+  .container
+    position: relative
+  &__content
+    background-color: #5386d9
+    color: #ffffff
+    padding-top: 250px
+    padding-bottom: 80px
+    a
+      color: #ffffff
+  &__container
+    display: flex
+  &__logo
+    width: 15%
+  &__menu
+    width: 45%
+    margin-right: 10%
+    display: flex
+    justify-content: space-between
+    ul
+      margin: 0
+      padding: 0
+      list-style-type: none
+      li
+        margin-bottom: 10px
+  &__contact
+    width: 20%
+    &_phone
+      font-weight: 600
+      margin-bottom: 10px
+      display: inline-block
+    &_address
+      display: block
+      width: 80%
+      font-size: 14px
+  &__social
+    width: 20%
+    &_title
+      margin-bottom: 10px
+      font-size: 14px
+      display: block
+    &_items
+      display: flex
+      align-items: center
+      align-content: center
+    &_item
+      background-color: #ffffff
+      width: 40px
+      height: 40px
+      border-radius: 50%
+      margin-right: 20px
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: center
+      &:last-child
+        margin-right: 0
+      svg path
+        fill: #5386d9
+
+
+
+// ВНутренние странцы
+
+.page-categories
+  padding-bottom: 300px
+  position: relative
+  &:after
+    position: absolute
+    content: ''
+    bottom: 0
+    left: 0
+    width: 320px
+    height: 350px
+    background-image: url('../image/dest/grid2.png')
+    background-size: cover
+    background-repeat: no-repeat
+  &__categories
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-gap: 30px
+    &:before
+      display: none
+  &__item
+    background-color: $blue
+    text-align: center
+    padding: 25px 40px
+    &:last-child
+      margin-right: 0
+    &_img
+      width: 85px
+      height: 85px
+      border-radius: 50%
+      background-color: #ffffff
+      display: inline-flex
+      align-items: center
+      align-content: center
+      justify-content: center
+    &_title
+      font-size: 18px
+      margin-top: 25px
+      color: $accent
+      text-align: center
+
+.advantages
+  background-color: $blue
+  padding: 300px 0
+  position: relative
+  margin-top: 200px
+  &:before
+    position: absolute
+    content: ''
+    top: -100px
+    left: 0
+    right: 0
+    width: 100%
+    height: 300px
+    background-image: url('../image/dest/offset-white.png')
+    background-size: cover
+    background-repeat: no-repeat
+  &:after
+    position: absolute
+    content: ''
+    bottom: -100px
+    left: 0
+    right: 0
+    width: 100%
+    height: 300px
+    background-image: url('../image/dest/offset-white.png')
+    transform: rotate(180deg)
+    background-size: cover
+    background-repeat: no-repeat
+  &__container
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 50px
+    &:before, &:after
+      display: none
+  &__item
+    &_img
+      height: 80px
+    &_title
+      font-weight: 600
+      font-size: 16px
+
+.information-page
+  padding-bottom: 200px
+  .destributers
+    margin-bottom: 20px
+.page-delivery
+  &__content
+    display: flex
+    &_side
+      margin-right: 80px
+      width: 50%
+      &:last-child
+        margin-right: 0
+.page-contact
+  padding-bottom: 160px
+  .contact
+    padding: 120px 0
+    &__container
+      display: flex
+      align-items: center
+      align-content: center
+    &__items
+      width: 25%
+      margin-right: 50px
+    &__map
+      width: 75%
+      height: 400px
+    &__item
+      display: flex
+      align-items: center
+      align-content: center
+      margin-bottom: 50px
+      &_icon
+        display: flex
+        align-items: center
+        align-content: center
+        justify-content: center
+      &_info
+        margin-left: 10px
+      &_title
+        display: block
+        font-size: 14px
+        line-height: 14px
+      &_val
+        color: $accent
+        text-decoration: none
+        font-size: 18px
+        font-weight: 600
+
+
+
+.revently-view
+  position: relative
+  &__title
+    text-align: center
+    font-family: $lugatype
+    font-size: 52px
+    position: relative
+    display: inline-block
+    &:before
+      position: absolute
+      content: ''
+      left: -100px
+      top: 50%
+      transform: translateY(-50%)
+      background-image: url('../image/dest/icons/fish.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      width: 56px
+      height: 22px
+    &:after
+      position: absolute
+      content: ''
+      right: -100px
+      top: 50%
+      transform: translateY(-50%)
+      background-image: url('../image/dest/icons/fish2.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      width: 56px
+      height: 22px
+    &_inner
+      text-align: center
+      margin-bottom: 60px
+
+  &__slider
+    &_inner
+      position: relative
+    &_btn
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      width: 50px
+      height: 50px
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: center
+      box-shadow: 0 0 20px rgba(0,0,0, .1)
+      z-index: 2
+      border-radius: 50%
+      background-color: #ffffff
+      cursor: pointer
+      &.swiper-button-disabled
+        opacity: .5
+    &_next
+      right: -25px
+    &_prev
+      left: -25px
+  &__product
+    background-color: #ffffff
+    padding: 20px 30px 40px
+    border-radius: 10px
+    &_top
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: flex-end
+    &_new
+      color: $orange
+    &_like
+      border: none
+      outline: none
+      background-color: transparent
+      padding: 0
+      margin: 0
+    &_img
+      display: inline-block
+      width: 80%
+      text-align: center
+      img
+        margin: 0
+        padding: 0
+        display: inline-block
+      &-inner
+        text-align: center
+        margin-bottom: 30px
+    &_title
+      font-size: 24px
+      font-family: $lugatype
+      margin-bottom: 20px
+      a
+        color: $accent
+        text-decoration: none
+    &_price-wrap
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: space-between
+      margin-bottom: 40px
+    &_button
+      text-align: center
+
+.product-category
+  &__bottom
+    background-color: $blue
+    padding: 250px 0
+    position: relative
+    margin-top: 100px
+    &:before
+      position: absolute
+      content: ''
+      top: -100px
+      left: 0
+      right: 0
+      width: 100%
+      height: 300px
+      background-image: url('../image/dest/offset-white.png')
+      background-size: cover
+      background-repeat: no-repeat
+    &:after
+      position: absolute
+      content: ''
+      bottom: 0
+      left: 0
+      width: 320px
+      height: 350px
+      background-image: url('../image/dest/grid2.png')
+      background-size: cover
+      background-repeat: no-repeat
+  &__container
+    display: flex
+  &__left
+    width: 25%
+    margin-right: 30px
+    &_banner
+      margin-top: 40px
+  &__content
+    width: 75%
+    &_title
+      margin-top: 0
+      font-size: 44px
+      font-family: $lugatype
+  &__top
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: space-between
+  &__sort
+    select
+      border: none
+      outline: none
+      box-shadow: none
+  &__products
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 30px
+    margin-top: 40px
+    margin-bottom: 40px
+
+.product-item
+  background-color: #ffffff
+  padding: 20px 30px 20px
+  border-radius: 10px
+  box-shadow: 0 0 10px rgba(0,0,0, .1)
+  &__thumb
+    text-align: center
+    a
+      display: inline-block
+  &__top
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: flex-end
+    &_like
+      border: none
+      outline: none
+      background-color: transparent
+      padding: 0
+      margin: 0
+    &_new
+      color: $orange
+  &__img
+    display: inline-block
+    width: 80%
+    text-align: center
+    img
+      margin: 0
+      padding: 0
+      display: inline-block
+    &-inner
+      text-align: center
+      margin-bottom: 30px
+  &__content
+    margin-top: 20px
+  &__title
+    font-size: 24px
+    font-family: $lugatype
+    margin-bottom: 20px
+    text-align: center
+    a
+      color: $accent
+      text-decoration: none
+  &__option
+    text-align: center
+    margin-bottom: 30px
+    display: block
+  &__button
+    text-align: center
+    .button
+      font-size: 14px
+      padding: 0 30px
+      height: 50px
+  &__price
+    display: block
+    text-align: center
+    margin-top: 20px
+    font-size: 24px
+    font-weight: 600
+    .price
+      margin: 0
+
+.product-product
+  &__title-mob
+    display: none
+  &__bottom
+    background-color: $blue
+    padding: 250px 0
+    position: relative
+    margin-top: 100px
+    &:before
+      position: absolute
+      content: ''
+      top: -100px
+      left: 0
+      right: 0
+      width: 100%
+      height: 300px
+      background-image: url('../image/dest/offset-white.png')
+      background-size: cover
+      background-repeat: no-repeat
+    &:after
+      position: absolute
+      content: ''
+      bottom: 0
+      left: 0
+      width: 320px
+      height: 350px
+      background-image: url('../image/dest/grid2.png')
+      background-size: cover
+      background-repeat: no-repeat
+  &__container_top
+    width: 80%
+    margin: 0 auto
+    display: flex
+  &__left
+    width: 55%
+    margin-right: 30px
+    &_links
+      display: flex
+      flex-direction: column
+      margin-top: 55px
+      justify-content: flex-start
+      align-items: flex-start
+      align-content: flex-start
+    &_link
+      margin-bottom: 5px
+      font-size: 14px
+      color: $accent
+      text-decoration: underline
+      display: inline-block
+  &__content
+    width: 45%
+  &__title
+    font-family: $lugatype
+    font-size: 40px
+    margin-top: 0
+    margin-bottom: 15px
+  .swiper-container
+    width: 100%
+    height: 100%
+  &__gallery
+    display: flex
+    margin-bottom: 30px
+    position: relative
+    &_nav-btn
+      position: absolute
+      z-index: 10
+      width: 30px
+      height: 30px
+      background-color: #ffffff
+      box-shadow: 0 0 10px rgba(0,0,0, .1)
+      border-radius: 50%
+      display: flex
+      align-items: center
+      align-content: center
+      justify-content: center
+      left: 27px
+    &_top
+      top: -15px
+      transform: rotate(180deg)
+    &_bottom
+      bottom: -15px
+  &__price-line
+    display: flex
+    align-items: center
+    align-content: center
+    margin-top: 35px
+    margin-bottom: 25px
+  &__price
+    display: flex
+    align-items: center
+    align-content: center
+    margin-left: 40px
+    &_main
+      font-size: 22px
+      font-weight: 600
+  &__action
+    display: flex
+    align-items: center
+    align-content: center
+  &__btn
+    height: 50px
+    padding: 0 30px
+    font-size: 14px
+    position: relative
+    z-index: 2
+  &__wishlist
+    display: flex
+    align-items: center
+    align-content: center
+    border: none
+    outline: none
+    background-color: transparent
+    margin-left: 20px
+    &_text
+      color: $orange
+      font-size: 14px
+      margin-left: 5px
+  &__option
+    margin-top: 40px
+    select
+      border: 1px solid $gray
+      height: 50px
+      display: block
+      width: 100%
+      outline: none
+      color: $accent
+      box-shadow: none
+      border-radius: 40px
+      font-size: 14px
+      padding: 0 30px
+  &__tabs
+    margin-top: 70px
+    &_top
+      background-color: #eef6ff
+      height: 50px
+      display: flex
+      align-items: center
+      align-content: center
+      margin-bottom: 35px
+    &_title
+      padding: 0 60px
+      color: $accent
+
+.product-slider__images
+  height: 375px
+  border: 4px solid $gray
+  margin-left: 20px
+  border-radius: 5px
+  &_item
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+  &_link
+    display: block
+  &_pagination.swiper-pagination
+    top: auto
+    bottom: 10px
+    right: 10px
+    transform: none
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: flex-end
+    .swiper-pagination-bullet
+      margin-right: 10px
+      margin-top: 0
+      margin-bottom: 0
+      width: 8px
+      height: 8px
+      background-color: #e6e6e6
+      border: none
+      box-shadow: none
+      &.swiper-pagination-bullet-active
+        background-color: $accent
+.product-slider__thumbs
+  height: 375px
+  width: 80px
+  &_item.swiper-slide
+    width: 80px
+    border: 2px solid $gray
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+    border-radius: 5px
+    &.swiper-slide-thumb-active
+      border: 2px solid $accent
+.slider__prev, .slider__next
+  cursor: pointer
+  text-align: center
+  font-size: 14px
+  height: 48px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #333333
+.slider__image
+  width: 100%
+  height: 100%
+  border-radius: 30px
+  overflow: hidden
+  img
+    display: block
+    width: 100%
+    height: 100%
+    -o-object-fit: cover
+    object-fit: cover
+.quantity-block
+  width: 110px
+  height: 45px
+  position: relative
+  &__input
+    width: 100%
+    height: 100%
+    display: block
+    text-align: center
+    border-radius: 40px
+    border: 1px solid $gray
+    color: $accent
+  &__btn
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    background-color: #eef6ff
+    display: flex
+    align-items: center
+    align-content: center
+    font-size: 14px
+    border: none
+    outline: none
+    &.quantity-arrow-minus
+      left: 10px
+    &.quantity-arrow-plus
+      right: 10px
+
+.checkout-cart
+  padding-bottom: 230px
+  &__container
+    .breadcrumb
+      display: none
+  &__table-top
+    background-color: #eef6ff
+    display: flex
+    align-items: center
+    align-content: center
+    height: 40px
+    &_title
+      font-size: 14px
+    .table-top-name
+      width: 55%
+      padding-left: 8px
+    .table-top-quantity
+      width: 10%
+    .table-top-size
+      width: 10%
+      text-align: center
+    .table-top-price
+      width: 20%
+      text-align: center
+  &__table-cont
+    &_row
+      display: flex
+      align-items: center
+      align-content: center
+      padding: 15px 0
+      border-bottom: 1px solid #EFF6FF
+    &_thumb
+      width: 10%
+      a
+        display: inline-block
+    &_name
+      width: 45%
+      a
+        color: $accent
+      span
+        display: block
+        font-size: 14px
+        opacity: .8
+    &_quantity
+      width: 10%
+    &_weight
+      width: 10%
+      text-align: center
+    &_price
+      width: 20%
+      text-align: center
+    &_remove
+      width: 5%
+      text-align: center
+    &_remove-icon
+      outline: none
+      display: inline-flex
+      align-items: center
+      align-content: center
+      justify-content: center
+      width: 45px
+      height: 45px
+      border: 1px solid $gray
+      background-color: transparent
+      border-radius: 50%
+    &_price-main
+      font-size: 14px
+    &_price-total
+      font-size: 18px
+      font-weight: 600
+  &__action
+    width: 25%
+    &-wrap
+      display: flex
+      justify-content: flex-end
+      margin-top: 40px
+    &_row
+      display: flex
+      align-items: center
+      align-content: center
+      padding: 5px 0
+    &_row-tatal
+      font-weight: 600
+      font-size: 18px
+    &_title
+      margin-right: 25px
+    &_btn
+      margin-top: 25px
+      .button
+        height: 50px
+        padding: 0 40px
+        font-size: 14px
+
+
+.account-wishlist
+  padding-bottom: 230px
+  &__products
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 30px
+.product-search
+  padding-bottom: 230px
+  &__field
+    display: flex
+    align-items: center
+    align-content: center
+    margin-bottom: 30px
+    .button
+      height: 50px
+      font-size: 14px
+  &__input
+    border: 2px solid $gray
+    padding: 0 20px
+    border-radius: 40px
+    height: 50px
+    margin-right: 40px
+    width: 350px
+  &__top
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: space-between
+    margin-bottom: 50px
+  &__title
+    margin: 0
+  &__select
+    margin: 0
+    border: none
+    outline: none
+    box-shadow: none
+    color: $accent
+  &__products
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 30px
+    margin-bottom: 50px
+
+.account-login
+  padding-bottom: 270px
+  .breadcrumb
+    display: none
+.authForm
+  width: 60%
+  margin: 0 auto
+  background-color: #eef6ff
+  border-radius: 10px
+  padding: 40px 30px
+  &__title
+    font-size: 28px
+    margin-top: 0
+  &__desc
+    font-size: 14px
+    margin-bottom: 40px
+  .form-group
+    margin-left: 0
+    margin-right: 0
+  .input
+    height: 50px
+    border: none
+    outline: none
+    border-radius: 5px
+    box-shadow: none
+    padding: 0 15px
+  .form-group a
+    font-size: 14px
+    line-height: 14px
+    color: $accent
+    text-decoration: underline
+  &__register
+    margin-left: 30px
+    text-decoration: underline
+    color: $accent
+  &__action
+    margin-top: 30px
+    display: flex
+    align-items: center
+    align-content: center
+  &__agree
+    margin-left: 20px
+    display: flex
+    align-items: center
+    align-content: center
+    &_text
+      font-size: 14px
+      margin-left: 10px
+
+.account-register
+  padding-bottom: 270px
+
+.checkout-checkout
+  padding-bottom: 230px
+
+
+
+
+.block-categories
+  background-color: $blue
+  border-radius: 5px
+  &__title
+    font-weight: 700
+    font-size: 16px
+    padding: 15px 20px
+    display: block
+    border-bottom: 1px solid #D5E2F1
+  &__list
+    list-style-type: none
+    padding: 0
+    margin: 0
+  &__link
+    padding: 15px 20px
+    display: inline-block
+    color: $accent
+    border-bottom: 1px solid #D5E2F1
+    width: 100%
+
+
+
+
+
+
+
+
+
+
+
+@import media
